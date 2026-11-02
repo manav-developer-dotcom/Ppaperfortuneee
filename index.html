@@ -1,0 +1,3340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PPAPERFORTUNE — Creative, Digital & Experiential Growth Agency | Bengaluru Cafés</title>
+  <meta name="description" content="PPAPERFORTUNE is Bengaluru's premier café growth agency. We bridge 4K cinematic reels, food photography, digital menu sites & Google Local SEO with live acoustic sessions and creator jams around Presidency University & Yelahanka." />
+  <meta name="keywords" content="Bengaluru café marketing, café social media agency, Yelahanka café growth, Presidency University events, acoustic nights café, digital menu QR Bengaluru, food reels production" />
+  <meta name="author" content="PPAPERFORTUNE" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ppaperfortune.in" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ppaperfortune.in" />
+  <meta property="og:title" content="PPAPERFORTUNE — Creative, Digital & Experiential Growth Agency" />
+  <meta property="og:description" content="Bringing Bengaluru's Finest Cafés to Every Student's Feed & Table. Visual content + real-world footfall activations." />
+  <meta property="og:site_name" content="PPAPERFORTUNE" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PPAPERFORTUNE | Creative, Digital & Experiential Café Agency" />
+  <meta name="twitter:description" content="Bridging 4K reels and live acoustic jam activations for Bengaluru cafés near Presidency University." />
+
+  <!-- Google Fonts Preconnect & Async Fallback -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       PPAPERFORTUNE LUXURY CAFÉ DESIGN SYSTEM & CSS TOKENS
+       ========================================================================== */
+    :root {
+      /* Background Hierarchy - Deep Slate/Charcoal */
+      --bg-primary: #141715;
+      --bg-secondary: #1e2421;
+      --bg-surface: #232b27;
+      --bg-surface-hover: #29342f;
+      --bg-glass: rgba(30, 36, 33, 0.78);
+      --bg-glass-card: rgba(35, 43, 39, 0.65);
+
+      /* Accent Colors - Warm Terracotta */
+      --terracotta: #c87d55;
+      --terracotta-light: #d98a5d;
+      --terracotta-hover: #e09366;
+      --terracotta-dark: #a9623d;
+      --terracotta-glow: rgba(200, 125, 85, 0.28);
+      --terracotta-subtle: rgba(200, 125, 85, 0.12);
+
+      /* Muted Sage Green */
+      --sage: #a3b0a7;
+      --sage-light: #c2cec7;
+      --sage-dark: #6a776e;
+      --sage-badge: rgba(163, 176, 167, 0.12);
+
+      /* Off-White & Cream Text */
+      --cream: #faf9f6;
+      --cream-dim: #e8e6e1;
+      --text-muted: #95a39a;
+      --text-dim: #67756c;
+
+      /* Borders & Glass */
+      --border-subtle: rgba(163, 176, 167, 0.13);
+      --border-card: rgba(163, 176, 167, 0.18);
+      --border-terracotta: rgba(200, 125, 85, 0.35);
+      --border-highlight: rgba(250, 249, 246, 0.15);
+
+      /* Typography */
+      --font-serif: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'Space Grotesk', ui-monospace, monospace;
+
+      /* Geometry & Spacing */
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-xl: 32px;
+      --nav-height: 80px;
+
+      /* Transitions & Shadows */
+      --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      --shadow-card: 0 16px 40px rgba(0, 0, 0, 0.45), 0 2px 6px rgba(0, 0, 0, 0.25);
+      --shadow-glow: 0 0 50px rgba(200, 125, 85, 0.22);
+      --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    /* CSS Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-height) + 16px);
+      font-size: 16px;
+      color-scheme: dark;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--cream);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    ::selection {
+      background: var(--terracotta);
+      color: #fff;
+    }
+
+    /* Subtle Film Grain Noise Texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.65;
+    }
+
+    /* Scroll progress bar */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--terracotta), var(--terracotta-light), #f0ab87);
+      z-index: 2000;
+      transition: width 0.1s ease-out;
+      box-shadow: 0 0 10px rgba(200, 125, 85, 0.7);
+    }
+
+    /* Typography & Utilities */
+    h1, h2, h3, h4, .font-serif {
+      font-family: var(--font-serif);
+      font-weight: 400;
+      letter-spacing: -0.01em;
+    }
+
+    p, span, a, button, input, select, textarea {
+      font-family: var(--font-sans);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button {
+      background: none;
+      border: none;
+      color: inherit;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .section-spacing {
+      padding-top: 110px;
+      padding-bottom: 110px;
+      position: relative;
+    }
+
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--terracotta-subtle);
+      border: 1px solid var(--border-terracotta);
+      color: var(--terracotta-light);
+      margin-bottom: 20px;
+    }
+
+    .pill-badge .indicator-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--terracotta-light);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--terracotta);
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.75); }
+    }
+
+    .section-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--terracotta);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 1.5px;
+      background: var(--terracotta);
+    }
+
+    .section-heading {
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      line-height: 1.15;
+      color: var(--cream);
+      margin-bottom: 20px;
+    }
+
+    .section-heading em {
+      font-style: italic;
+      color: var(--terracotta-light);
+    }
+
+    .section-subheading {
+      font-size: 1.12rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    .center-text {
+      text-align: center;
+    }
+
+    .center-text .section-eyebrow {
+      justify-content: center;
+    }
+    .center-text .section-eyebrow::after {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 1.5px;
+      background: var(--terracotta);
+    }
+
+    .center-text .section-subheading {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Primary and Secondary Buttons */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark));
+      color: #fff;
+      padding: 14px 30px;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 20px rgba(200, 125, 85, 0.4);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(200, 125, 85, 0.6);
+      background: linear-gradient(135deg, var(--terracotta-light), var(--terracotta));
+      color: #fff;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: rgba(30, 36, 33, 0.7);
+      color: var(--cream);
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 1px solid var(--border-card);
+      backdrop-filter: blur(10px);
+      transition: var(--transition-smooth);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(41, 52, 47, 0.9);
+      border-color: var(--terracotta);
+      color: var(--terracotta-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #25D366;
+      color: #0b2214;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+      transition: var(--transition-smooth);
+    }
+
+    .btn-whatsapp:hover {
+      background: #2ee672;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+      color: #05160c;
+    }
+
+    /* Ambient Background Gradients */
+    .ambient-glow {
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      border-radius: 50%;
+      filter: blur(140px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+    }
+
+    .glow-terracotta {
+      background: radial-gradient(circle, var(--terracotta) 0%, transparent 70%);
+    }
+
+    .glow-sage {
+      background: radial-gradient(circle, #3e5347 0%, transparent 70%);
+    }
+
+    /* ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== */
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      z-index: 1000;
+      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      background: rgba(20, 23, 21, 0.5);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(163, 176, 167, 0.08);
+    }
+
+    .site-header.scrolled {
+      background: rgba(20, 23, 21, 0.92);
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.35rem;
+      font-family: var(--font-serif);
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--cream);
+    }
+
+    .brand-logo:hover {
+      color: var(--terracotta-light);
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--terracotta), #964f2a);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 4px 16px rgba(200, 125, 85, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--sage);
+      position: relative;
+      padding: 6px 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--terracotta);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--cream);
+    }
+
+    .nav-link:hover::after,
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .nav-link.active {
+      color: var(--cream);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* Mobile Menu Toggle */
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
+      color: var(--cream);
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 1002;
+    }
+
+    .menu-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--cream);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 320px;
+      height: 100vh;
+      background: var(--bg-secondary);
+      border-left: 1px solid var(--border-subtle);
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6);
+      padding: 100px 32px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transform: translateX(100%);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1001;
+    }
+
+    .mobile-drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .drawer-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .mobile-nav-link {
+      font-size: 1.25rem;
+      font-family: var(--font-serif);
+      color: var(--cream-dim);
+      display: block;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(163, 176, 167, 0.08);
+    }
+
+    .mobile-nav-link:hover {
+      color: var(--terracotta-light);
+      padding-left: 8px;
+    }
+
+    /* ==========================================================================
+       HERO SECTION
+       ========================================================================== */
+    .hero-section {
+      min-height: 100vh;
+      padding-top: calc(var(--nav-height) + 40px);
+      padding-bottom: 80px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(circle at 80% 20%, rgba(200, 125, 85, 0.12) 0%, transparent 50%),
+                  radial-gradient(circle at 10% 80%, rgba(62, 83, 71, 0.15) 0%, transparent 60%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-headline {
+      font-size: clamp(2.5rem, 5.5vw, 4.4rem);
+      line-height: 1.08;
+      margin-bottom: 24px;
+      color: var(--cream);
+    }
+
+    .hero-headline em {
+      color: var(--terracotta-light);
+      font-style: italic;
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-subtitle {
+      font-size: 1.18rem;
+      line-height: 1.75;
+      color: var(--sage);
+      margin-bottom: 36px;
+      max-width: 580px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+
+    /* Metrics Row */
+    .hero-metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 24px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .metric-box {
+      border-right: 1px solid var(--border-subtle);
+      padding-right: 16px;
+    }
+
+    .metric-box:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .metric-number {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      line-height: 1;
+      color: var(--terracotta-light);
+      margin-bottom: 6px;
+    }
+
+    .metric-label {
+      font-size: 0.82rem;
+      color: var(--sage);
+      font-weight: 500;
+      line-height: 1.35;
+    }
+
+    /* Hero Interactive Mockup Card */
+    .hero-card-wrapper {
+      position: relative;
+    }
+
+    .hero-card-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: -15px;
+      background: linear-gradient(135deg, var(--terracotta-glow), transparent 70%);
+      border-radius: var(--radius-xl);
+      z-index: -1;
+      filter: blur(20px);
+    }
+
+    .cafe-mockup-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mockup-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+    }
+
+    .mockup-badge {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--sage);
+    }
+
+    .mockup-live-indicator {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #25D366;
+      background: rgba(37, 211, 102, 0.12);
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(37, 211, 102, 0.25);
+    }
+
+    .mockup-pulse {
+      width: 6px;
+      height: 6px;
+      background: #25D366;
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+
+    .mockup-cafe-header {
+      margin-bottom: 20px;
+    }
+
+    .mockup-cafe-title {
+      font-size: 1.6rem;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+
+    .mockup-cafe-location {
+      font-size: 0.84rem;
+      color: var(--terracotta-light);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Live Feed Simulation Reel Component */
+    .mockup-reel-preview {
+      background: linear-gradient(180deg, #18201c, #0f1311);
+      border: 1px solid rgba(163, 176, 167, 0.15);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      position: relative;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .mockup-reel-preview::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 30%, rgba(200, 125, 85, 0.15), transparent 70%);
+      pointer-events: none;
+    }
+
+    .reel-content-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .reel-tag {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--terracotta);
+    }
+
+    .reel-views {
+      font-size: 0.75rem;
+      color: var(--sage);
+    }
+
+    .reel-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--cream);
+      margin-bottom: 14px;
+    }
+
+    .reel-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .reel-stat {
+      background: rgba(255, 255, 255, 0.04);
+      padding: 8px 10px;
+      border-radius: var(--radius-sm);
+      text-align: center;
+    }
+
+    .reel-stat-val {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--terracotta-light);
+    }
+
+    .reel-stat-lbl {
+      font-size: 0.68rem;
+      color: var(--sage);
+      text-transform: uppercase;
+    }
+
+    /* Event Activation Card Inside Mockup */
+    .mockup-event-banner {
+      background: rgba(200, 125, 85, 0.08);
+      border: 1px solid var(--border-terracotta);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .event-info h5 {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--cream);
+      margin-bottom: 2px;
+    }
+
+    .event-info p {
+      font-size: 0.78rem;
+      color: var(--sage);
+    }
+
+    .event-badge-tag {
+      background: var(--terracotta);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    /* Floating Tags around Card */
+    .floating-card-tag {
+      position: absolute;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 12px 18px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      backdrop-filter: blur(12px);
+      z-index: 2;
+    }
+
+    .tag-float-1 {
+      top: -24px;
+      right: -24px;
+      animation: floatSlow 4s ease-in-out infinite;
+    }
+
+    .tag-float-2 {
+      bottom: -24px;
+      left: -24px;
+      animation: floatSlow 5s ease-in-out infinite reverse;
+    }
+
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .floating-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--terracotta-subtle);
+      border: 1px solid var(--border-terracotta);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--terracotta-light);
+      font-size: 1.1rem;
+    }
+
+    .floating-text-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--cream);
+    }
+
+    .floating-text-sub {
+      font-size: 0.7rem;
+      color: var(--sage);
+    }
+
+    /* ==========================================================================
+       ABOUT & VIBE GROWTH FORMULA
+       ========================================================================== */
+    .about-section {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-lead-quote {
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      line-height: 1.45;
+      color: var(--cream);
+      margin-bottom: 24px;
+      position: relative;
+      padding-left: 24px;
+      border-left: 3px solid var(--terracotta);
+    }
+
+    .about-body-text {
+      color: var(--sage);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    /* Comparison Box: Old vs PPAPERFORTUNE */
+    .comparison-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 36px;
+    }
+
+    .comp-card {
+      padding: 24px;
+      border-radius: var(--radius-md);
+      position: relative;
+    }
+
+    .comp-card.old-way {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .comp-card.ppf-way {
+      background: rgba(200, 125, 85, 0.08);
+      border: 1px solid var(--border-terracotta);
+    }
+
+    .comp-header {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .comp-card.old-way .comp-header {
+      color: #999;
+    }
+
+    .comp-card.ppf-way .comp-header {
+      color: var(--terracotta-light);
+    }
+
+    .comp-list {
+      list-style: none;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .comp-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .comp-card.old-way .comp-list li::before {
+      content: '✕';
+      color: #e06c75;
+      font-weight: 700;
+    }
+
+    .comp-card.ppf-way .comp-list li::before {
+      content: '✓';
+      color: var(--terracotta-light);
+      font-weight: 700;
+    }
+
+    /* 4-Step Vibe Loop Cards */
+    .vibe-loop-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .vibe-step-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: var(--transition-smooth);
+    }
+
+    .vibe-step-card:hover {
+      transform: translateX(6px);
+      border-color: var(--border-terracotta);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .step-number {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--terracotta);
+      background: var(--terracotta-subtle);
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid var(--border-terracotta);
+    }
+
+    .step-content h4 {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--cream);
+      margin-bottom: 6px;
+    }
+
+    .step-content p {
+      font-size: 0.92rem;
+      color: var(--sage);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       SERVICES SECTION
+       ========================================================================== */
+    .services-section {
+      position: relative;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 60px;
+    }
+
+    .service-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 36px 30px;
+      position: relative;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--terracotta), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-terracotta);
+      box-shadow: var(--shadow-card), 0 0 30px var(--terracotta-subtle);
+      background: var(--bg-surface-hover);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-card.span-two {
+      grid-column: span 2;
+    }
+
+    .service-icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
+      background: var(--terracotta-subtle);
+      border: 1px solid var(--border-terracotta);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--terracotta-light);
+      font-size: 1.5rem;
+      margin-bottom: 24px;
+    }
+
+    .service-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--terracotta);
+      margin-bottom: 8px;
+    }
+
+    .service-title {
+      font-size: 1.5rem;
+      color: var(--cream);
+      margin-bottom: 14px;
+      line-height: 1.25;
+    }
+
+    .service-desc {
+      color: var(--sage);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    .service-feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 20px;
+      margin-top: auto;
+    }
+
+    .service-feature-list li {
+      font-size: 0.88rem;
+      color: var(--cream-dim);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .service-feature-list li span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--terracotta-light);
+    }
+
+    /* Card 5 Experiential Special Layout */
+    .experiential-inner {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .experiential-perks-box {
+      background: rgba(20, 23, 21, 0.7);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+
+    .perks-box-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--terracotta-light);
+      margin-bottom: 12px;
+    }
+
+    .perks-tags-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .perk-pill {
+      font-size: 0.78rem;
+      background: rgba(163, 176, 167, 0.08);
+      border: 1px solid rgba(163, 176, 167, 0.2);
+      color: var(--cream);
+      padding: 6px 12px;
+      border-radius: 999px;
+    }
+
+    /* ==========================================================================
+       PRICING & RETAINER CALCULATOR
+       ========================================================================== */
+    .retainer-section {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .calculator-wrapper {
+      margin-top: 50px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Package Radio Selection Grid */
+    .packages-selection-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+
+    .package-card {
+      background: var(--bg-surface);
+      border: 2px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      cursor: pointer;
+      position: relative;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .package-card:hover {
+      border-color: rgba(200, 125, 85, 0.5);
+      transform: translateY(-4px);
+    }
+
+    .package-card.selected {
+      border-color: var(--terracotta);
+      background: rgba(200, 125, 85, 0.07);
+      box-shadow: 0 0 35px rgba(200, 125, 85, 0.2);
+    }
+
+    /* Recommended Badge on Tier 2 */
+    .recommended-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark));
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 16px;
+      border-radius: 999px;
+      box-shadow: 0 4px 12px rgba(200, 125, 85, 0.5);
+      white-space: nowrap;
+    }
+
+    .package-header {
+      margin-bottom: 20px;
+    }
+
+    .package-radio-indicator {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid var(--border-card);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      transition: var(--transition-smooth);
+    }
+
+    .package-card.selected .package-radio-indicator {
+      border-color: var(--terracotta);
+    }
+
+    .package-radio-indicator::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--terracotta);
+      opacity: 0;
+      transform: scale(0.5);
+      transition: var(--transition-smooth);
+    }
+
+    .package-card.selected .package-radio-indicator::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .package-tier-name {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--cream);
+      margin-bottom: 6px;
+    }
+
+    .package-ideal-for {
+      font-size: 0.82rem;
+      color: var(--sage);
+      min-height: 38px;
+    }
+
+    .package-price-range {
+      margin: 20px 0;
+      padding: 16px 0;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .package-amount {
+      font-family: var(--font-mono);
+      font-size: 1.95rem;
+      font-weight: 700;
+      color: var(--terracotta-light);
+      line-height: 1.1;
+    }
+
+    .package-amount span.period {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--sage);
+      font-family: var(--font-sans);
+    }
+
+    .package-deliverables {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+      font-size: 0.88rem;
+      color: var(--cream-dim);
+    }
+
+    .package-deliverables li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.4;
+    }
+
+    .package-deliverables li::before {
+      content: '✓';
+      color: var(--terracotta-light);
+      font-weight: 700;
+    }
+
+    /* Addon Option Toggle Box */
+    .addon-toggle-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-md);
+      padding: 24px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 36px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .addon-toggle-card:hover {
+      border-color: var(--border-terracotta);
+    }
+
+    .addon-toggle-card.active {
+      border-color: var(--terracotta);
+      background: rgba(200, 125, 85, 0.08);
+    }
+
+    .addon-info-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .addon-icon-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--terracotta-subtle);
+      border: 1px solid var(--border-terracotta);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: var(--terracotta-light);
+      flex-shrink: 0;
+    }
+
+    .addon-details h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+
+    .addon-details p {
+      font-size: 0.86rem;
+      color: var(--sage);
+    }
+
+    .addon-price-tag {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--terracotta-light);
+      text-align: right;
+    }
+
+    .addon-price-tag span {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--sage);
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    /* Switch Component */
+    .switch-ui {
+      width: 52px;
+      height: 30px;
+      background: rgba(163, 176, 167, 0.2);
+      border-radius: 999px;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .switch-ui::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 24px;
+      height: 24px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    .addon-toggle-card.active .switch-ui {
+      background: var(--terracotta);
+    }
+
+    .addon-toggle-card.active .switch-ui::after {
+      transform: translateX(22px);
+    }
+
+    /* Investment Summary Card */
+    .investment-summary-card {
+      background: linear-gradient(135deg, rgba(35, 43, 39, 0.95), rgba(20, 23, 21, 0.95));
+      border: 1.5px solid var(--border-terracotta);
+      border-radius: var(--radius-lg);
+      padding: 36px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      box-shadow: var(--shadow-card), 0 0 40px rgba(200, 125, 85, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .summary-left {
+      max-width: 550px;
+    }
+
+    .summary-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--terracotta);
+      margin-bottom: 8px;
+    }
+
+    .summary-price-display {
+      font-family: var(--font-mono);
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--cream);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .summary-breakdown-text {
+      font-size: 0.92rem;
+      color: var(--sage);
+      line-height: 1.5;
+    }
+
+    .summary-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 260px;
+    }
+
+    /* ==========================================================================
+       FOUNDING LEADERSHIP TEAM GRID
+       ========================================================================== */
+    .leadership-section {
+      position: relative;
+    }
+
+    .equal-ownership-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(163, 176, 167, 0.08);
+      border: 1px solid var(--border-subtle);
+      padding: 8px 20px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--sage);
+      margin-bottom: 24px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 50px;
+    }
+
+    .team-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .team-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--terracotta);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-terracotta);
+      box-shadow: var(--shadow-card);
+      background: var(--bg-surface-hover);
+    }
+
+    .team-card:hover::after {
+      opacity: 1;
+    }
+
+    .team-avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--bg-secondary), var(--bg-surface));
+      border: 2px solid var(--border-terracotta);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      position: relative;
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--terracotta-light);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .team-badge-equity {
+      position: absolute;
+      bottom: -6px;
+      background: var(--terracotta);
+      color: #fff;
+      font-size: 0.62rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 999px;
+      letter-spacing: 0.05em;
+      border: 1px solid #141715;
+    }
+
+    .team-name {
+      font-family: var(--font-serif);
+      font-size: 1.45rem;
+      color: var(--cream);
+      margin-bottom: 6px;
+    }
+
+    .team-role {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--terracotta);
+      margin-bottom: 14px;
+      min-height: 38px;
+    }
+
+    .team-bio {
+      font-size: 0.88rem;
+      color: var(--sage);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .team-specialties {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+      margin-top: auto;
+    }
+
+    .spec-tag {
+      font-size: 0.68rem;
+      font-weight: 600;
+      background: rgba(163, 176, 167, 0.1);
+      color: var(--sage-light);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    /* ==========================================================================
+       CONTACT & ONBOARDING SECTION
+       ========================================================================== */
+    .contact-section {
+      background: radial-gradient(circle at 10% 50%, rgba(200, 125, 85, 0.09) 0%, transparent 60%),
+                  radial-gradient(circle at 90% 80%, rgba(62, 83, 71, 0.12) 0%, transparent 50%),
+                  var(--bg-secondary);
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .contact-info-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .info-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: var(--terracotta-subtle);
+      border: 1px solid var(--border-terracotta);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--terracotta-light);
+      flex-shrink: 0;
+    }
+
+    .info-content h5 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+
+    .info-content p, .info-content a {
+      font-size: 0.88rem;
+      color: var(--sage);
+      line-height: 1.5;
+    }
+
+    .info-content a:hover {
+      color: var(--terracotta-light);
+    }
+
+    /* Direct Form Styling */
+    .onboarding-form-wrapper {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+    }
+
+    .form-heading {
+      font-size: 1.8rem;
+      color: var(--cream);
+      margin-bottom: 8px;
+    }
+
+    .form-subtext {
+      font-size: 0.92rem;
+      color: var(--sage);
+      margin-bottom: 30px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--cream-dim);
+      margin-bottom: 8px;
+    }
+
+    .form-label span.req {
+      color: var(--terracotta);
+    }
+
+    .form-control {
+      width: 100%;
+      background: var(--bg-primary);
+      border: 1.5px solid var(--border-card);
+      border-radius: var(--radius-sm);
+      padding: 13px 16px;
+      font-size: 0.94rem;
+      color: var(--cream);
+      transition: var(--transition-smooth);
+      outline: none;
+    }
+
+    .form-control:focus {
+      border-color: var(--terracotta);
+      box-shadow: 0 0 0 3px var(--terracotta-glow);
+      background: #171b18;
+    }
+
+    .form-control::placeholder {
+      color: var(--text-dim);
+    }
+
+    select.form-control {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23a3b0a7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 40px;
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    /* ==========================================================================
+       ONBOARDING STRATEGY MODAL
+       ========================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 12, 11, 0.82);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-dialog {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-card);
+      border-radius: var(--radius-lg);
+      max-width: 620px;
+      width: 100%;
+      padding: 40px;
+      position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-card), 0 0 60px rgba(0, 0, 0, 0.8);
+      transform: scale(0.95) translateY(20px);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-backdrop.open .modal-dialog {
+      transform: scale(1) translateY(0);
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--sage);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: var(--transition-smooth);
+    }
+
+    .modal-close-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: var(--cream);
+    }
+
+    /* ==========================================================================
+       FOOTER
+       ========================================================================== */
+    .site-footer {
+      background: var(--bg-primary);
+      border-top: 1px solid var(--border-subtle);
+      padding: 80px 0 36px;
+      position: relative;
+    }
+
+    .footer-top-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .footer-brand-col p {
+      color: var(--sage);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      margin-top: 16px;
+      max-width: 360px;
+    }
+
+    .footer-col-title {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--cream);
+      margin-bottom: 20px;
+    }
+
+    .footer-links-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-link {
+      font-size: 0.9rem;
+      color: var(--sage);
+      transition: var(--transition-smooth);
+    }
+
+    .footer-link:hover {
+      color: var(--terracotta-light);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.84rem;
+      color: var(--text-dim);
+    }
+
+    .footer-bottom a {
+      color: var(--terracotta);
+    }
+
+    /* Toast Notification */
+    #toast-notification {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-terracotta);
+      border-radius: var(--radius-sm);
+      padding: 14px 22px;
+      color: var(--cream);
+      font-size: 0.9rem;
+      box-shadow: var(--shadow-card);
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    #toast-notification.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Back to Top Floating Button */
+    #back-to-top {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-card);
+      color: var(--sage);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 900;
+      box-shadow: var(--shadow-sm);
+      opacity: 0;
+      transform: scale(0.8);
+      transition: var(--transition-smooth);
+      pointer-events: none;
+    }
+
+    #back-to-top.visible {
+      opacity: 1;
+      transform: scale(1);
+      pointer-events: auto;
+    }
+
+    #back-to-top:hover {
+      background: var(--terracotta);
+      color: #fff;
+      border-color: var(--terracotta);
+      transform: translateY(-3px);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE BREAKPOINTS
+       ========================================================================== */
+    @media (max-width: 1080px) {
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .service-card.span-two {
+        grid-column: span 2;
+      }
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-top-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+      }
+    }
+
+    @media (max-width: 880px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+      .hero-card-wrapper {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .packages-selection-grid {
+        grid-template-columns: 1fr;
+      }
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .investment-summary-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .summary-actions {
+        width: 100%;
+      }
+      .summary-actions .btn-whatsapp,
+      .summary-actions .btn-secondary {
+        width: 100%;
+      }
+      .menu-toggle {
+        display: flex;
+      }
+      .nav-menu {
+        display: none;
+      }
+      .nav-actions .btn-primary {
+        display: none;
+      }
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section-spacing {
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+      .hero-metrics-bar {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .metric-box {
+        border-right: none;
+        border-bottom: 1px solid var(--border-subtle);
+        padding-bottom: 14px;
+        padding-right: 0;
+      }
+      .metric-box:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .service-card.span-two {
+        grid-column: span 1;
+      }
+      .experiential-inner {
+        grid-template-columns: 1fr;
+      }
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+      .comparison-container {
+        grid-template-columns: 1fr;
+      }
+      .addon-toggle-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .footer-top-grid {
+        grid-template-columns: 1fr;
+      }
+      .floating-card-tag {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to Top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- Toast Notification System -->
+  <div id="toast-notification" role="status" aria-live="polite">
+    <span id="toast-icon">✨</span>
+    <span id="toast-message">Action successful</span>
+  </div>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION
+       ========================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-container">
+      <a href="https://ppaperfortune.in" class="brand-logo" aria-label="PPAPERFORTUNE Homepage">
+        <div class="brand-mark" aria-hidden="true">PP</div>
+        <span>PPAPERFORTUNE</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#retainers" class="nav-link">Retainers</a></li>
+          <li><a href="#leadership" class="nav-link">Leadership</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav CTA & Mobile Toggle -->
+      <div class="nav-actions">
+        <button class="btn-primary open-modal-btn" aria-label="Book Shoot Strategy Session">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+            <circle cx="12" cy="13" r="4"></circle>
+          </svg>
+          <span>Book Shoot Strategy</span>
+        </button>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="drawer-overlay" id="drawer-overlay"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Drawer">
+    <div>
+      <div class="brand-logo" style="margin-bottom: 30px;">
+        <div class="brand-mark" aria-hidden="true">PP</div>
+        <span>PPAPERFORTUNE</span>
+      </div>
+      <ul class="mobile-nav-list">
+        <li><a href="#about" class="mobile-nav-link">About & Vibe Loop</a></li>
+        <li><a href="#services" class="mobile-nav-link">5 Core Disciplines</a></li>
+        <li><a href="#retainers" class="mobile-nav-link">Retainer Calculator</a></li>
+        <li><a href="#leadership" class="mobile-nav-link">Founding Team</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Get in Touch</a></li>
+      </ul>
+    </div>
+    <div>
+      <button class="btn-primary open-modal-btn" style="width: 100%; justify-content: center;">
+        Book Shoot Strategy
+      </button>
+      <p style="font-size: 0.78rem; color: var(--text-dim); text-align: center; margin-top: 14px;">
+        Bengaluru · Yelahanka & Presidency Uni
+      </p>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="ambient-glow glow-terracotta" style="top: -100px; right: -50px;"></div>
+      <div class="ambient-glow glow-sage" style="bottom: -150px; left: -100px;"></div>
+
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Left Column Content -->
+          <div class="hero-text-col">
+            <div class="pill-badge">
+              <span class="indicator-dot"></span>
+              <span>Bengaluru's Café Growth Specialists · Yelahanka Hub</span>
+            </div>
+
+            <h1 class="hero-headline">
+              Bringing Bengaluru's <em>Finest Cafés</em> to Every Student's Feed &amp; Table.
+            </h1>
+
+            <p class="hero-subtitle">
+              We engineer the sweet spot between high-aesthetic visual content—4K reels, interior photography, custom digital menus &amp; Google Local SEO—and live experiential footfall activations that keep tables packed.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#retainers" class="btn-primary" id="hero-calc-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                  <line x1="8" y1="6" x2="16" y2="6"></line>
+                  <line x1="16" y1="14" x2="16" y2="18"></line>
+                  <path d="M16 10h.01"></path>
+                  <path d="M12 10h.01"></path>
+                  <path d="M8 10h.01"></path>
+                  <path d="M12 14h.01"></path>
+                  <path d="M8 14h.01"></path>
+                  <path d="M12 18h.01"></path>
+                  <path d="M8 18h.01"></path>
+                </svg>
+                <span>Calculate Retainer</span>
+              </a>
+
+              <button class="btn-secondary open-modal-btn" aria-label="Schedule an in-person meeting">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+                <span>Schedule Meeting</span>
+              </button>
+            </div>
+
+            <!-- Live Metrics Row -->
+            <div class="hero-metrics-bar">
+              <div class="metric-box">
+                <div class="metric-number" data-target="3" id="metric-cafes">3+</div>
+                <div class="metric-label">Partner Cafés Onboarded</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-number" data-target="150" id="metric-reach">150%</div>
+                <div class="metric-label">Avg Reach &amp; Footfall Boost</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-number" data-target="4" id="metric-disciplines">4</div>
+                <div class="metric-label">Equal Core Disciplines</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column Interactive Simulation Card -->
+          <div class="hero-card-wrapper">
+            <!-- Floating accent tags -->
+            <div class="floating-card-tag tag-float-1">
+              <div class="floating-icon">📸</div>
+              <div>
+                <div class="floating-text-title">4K Cinematic Reel</div>
+                <div class="floating-text-sub">12.4K Views in 48h</div>
+              </div>
+            </div>
+
+            <div class="floating-card-tag tag-float-2">
+              <div class="floating-icon">🎸</div>
+              <div>
+                <div class="floating-text-title">Live Acoustic Sunset</div>
+                <div class="floating-text-sub">Housefull · 42 RSVPs</div>
+              </div>
+            </div>
+
+            <!-- Main Mockup Card -->
+            <div class="cafe-mockup-card">
+              <div class="mockup-top-bar">
+                <div class="mockup-badge">
+                  <span style="color: var(--terracotta);">☕</span>
+                  <span>Partner Showcase · Yelahanka</span>
+                </div>
+                <div class="mockup-live-indicator">
+                  <span class="mockup-pulse"></span>
+                  <span>CAMPAIGN ACTIVE</span>
+                </div>
+              </div>
+
+              <div class="mockup-cafe-header">
+                <h3 class="mockup-cafe-title">The Artisan Roastery</h3>
+                <div class="mockup-cafe-location">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  <span>Opposite Presidency University, Rajan Kunte</span>
+                </div>
+              </div>
+
+              <!-- Reel Simulation -->
+              <div class="mockup-reel-preview">
+                <div class="reel-content-header">
+                  <span class="reel-tag">Viral Content Matrix</span>
+                  <span class="reel-views">Target: Students &amp; Young Professionals</span>
+                </div>
+                <div class="reel-title">"The Only Café in Yelahanka with French Press &amp; Velvet Chemex Brews"</div>
+                <div class="reel-stats-grid">
+                  <div class="reel-stat">
+                    <div class="reel-stat-val">+182%</div>
+                    <div class="reel-stat-lbl">Discovery</div>
+                  </div>
+                  <div class="reel-stat">
+                    <div class="reel-stat-val">3.8x</div>
+                    <div class="reel-stat-lbl">Weekend Walk-ins</div>
+                  </div>
+                  <div class="reel-stat">
+                    <div class="reel-stat-val">#1</div>
+                    <div class="reel-stat-lbl">Google Maps</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Event Banner inside Mockup -->
+              <div class="mockup-event-banner">
+                <div class="event-info">
+                  <h5>Friday Unplugged Jam</h5>
+                  <p>Presidency Univ Student Creators Circle</p>
+                </div>
+                <div class="event-badge-tag">Sold Out</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT & VIBE GROWTH FORMULA
+         ========================================================================== -->
+    <section class="section-spacing about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Left Column: The Problem & Vision -->
+          <div>
+            <div class="section-eyebrow">The Vibe Growth Formula</div>
+            <h2 class="section-heading">
+              Why Traditional Social Media <em>Fails</em> Bengaluru Cafés.
+            </h2>
+
+            <div class="about-lead-quote">
+              "Posting twice a week on Canva doesn't bring footfall. Students in Bengaluru crave a sensory vibe—they visit where the camera loves the lighting and where Friday nights come alive."
+            </div>
+
+            <p class="about-body-text">
+              Most generic marketing agencies treat cafés like e-commerce brands: boosting empty posts that get ghost impressions. At <strong>PPAPERFORTUNE</strong>, we built a closed-loop system: studio-grade visual storytelling creates the craving, local SEO captures the intent, and acoustic events provide the reason to show up in real life.
+            </p>
+
+            <!-- Comparison Box -->
+            <div class="comparison-container">
+              <div class="comp-card old-way">
+                <div class="comp-header">Traditional Agency</div>
+                <ul class="comp-list">
+                  <li>Generic stock or iPhone food shots</li>
+                  <li>Zero offline footfall activations</li>
+                  <li>No local student community ties</li>
+                  <li>Unmeasured vanity likes</li>
+                </ul>
+              </div>
+
+              <div class="comp-card ppf-way">
+                <div class="comp-header">The PPAPERFORTUNE Way</div>
+                <ul class="comp-list">
+                  <li>4K Cinematic reels with macro framing</li>
+                  <li>Live acoustic sessions &amp; open mics</li>
+                  <li>Hyperlocal Presidency Uni student reach</li>
+                  <li>Tracked footfall &amp; Google #1 ranking</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: 4-Step Closed Loop -->
+          <div class="vibe-loop-grid">
+            <div class="vibe-step-card">
+              <div class="step-number">01</div>
+              <div class="step-content">
+                <h4>Aesthetic Content Synthesis</h4>
+                <p>We script and produce professional 4K food cinematography and interior mood reels capturing steam, texture, ambient shadows, and barista craft.</p>
+              </div>
+            </div>
+
+            <div class="vibe-step-card">
+              <div class="step-number">02</div>
+              <div class="step-content">
+                <h4>Student Feed Domination</h4>
+                <p>Hyper-targeted distribution across Instagram reels, stories, and college creator networks within a 5km radius of Presidency University &amp; Yelahanka.</p>
+              </div>
+            </div>
+
+            <div class="vibe-step-card">
+              <div class="step-number">03</div>
+              <div class="step-content">
+                <h4>Experiential Footfall Triggers</h4>
+                <p>Curating live acoustic nights, creator jam sessions, and tasting meetups that convert passive digital lurkers into energetic weekend café crowds.</p>
+              </div>
+            </div>
+
+            <div class="vibe-step-card">
+              <div class="step-number">04</div>
+              <div class="step-content">
+                <h4>Retention &amp; Digital Infrastructure</h4>
+                <p>Seamless mobile digital menus, table QR integrations, and Google Maps Local SEO guarantee repeat visits and 5-star organic review spikes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SERVICES SHOWCASE (5 CORE DISCIPLINES)
+         ========================================================================== -->
+    <section class="section-spacing services-section" id="services">
+      <div class="ambient-glow glow-terracotta" style="top: 20%; left: -200px;"></div>
+      <div class="container">
+        <div class="center-text">
+          <div class="section-eyebrow">Comprehensive Capabilities</div>
+          <h2 class="section-heading">Five Core Disciplines. <em>One Unified Growth Engine.</em></h2>
+          <p class="section-subheading">
+            From high-definition lenses to live microphone sound checks, we handle everything your café needs to become the undisputed campus hangout.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1: Content Creation -->
+          <div class="service-card">
+            <div>
+              <div class="service-icon-box">🎬</div>
+              <div class="service-tag">Visual Storytelling</div>
+              <h3 class="service-title">Content Creation &amp; Production</h3>
+              <p class="service-desc">
+                Broadcast-grade production tailored for vertical screens. We shoot 4K reels, macro beverage slow-mos, and ambient golden-hour architectural stills.
+              </p>
+            </div>
+            <ul class="service-feature-list">
+              <li><span class="dot"></span> 4K Ultra-HD scripted reels</li>
+              <li><span class="dot"></span> Food &amp; artisanal coffee styling</li>
+              <li><span class="dot"></span> Professional cinema lighting kits</li>
+              <li><span class="dot"></span> High-res grid &amp; print stills</li>
+            </ul>
+          </div>
+
+          <!-- Service 2: Social Media & Community -->
+          <div class="service-card">
+            <div>
+              <div class="service-icon-box">📱</div>
+              <div class="service-tag">Audience Growth</div>
+              <h3 class="service-title">Social Media &amp; Community</h3>
+              <p class="service-desc">
+                Transforming followers into loyal regulars. We manage your Instagram grid, craft punchy youth-relevant copy, post daily stories, and answer every DM promptly.
+              </p>
+            </div>
+            <ul class="service-feature-list">
+              <li><span class="dot"></span> Grid aesthetic layout design</li>
+              <li><span class="dot"></span> Witty, college-relevant captions</li>
+              <li><span class="dot"></span> Story polls, countdowns &amp; Q&amp;As</li>
+              <li><span class="dot"></span> Lead &amp; reservation DM management</li>
+            </ul>
+          </div>
+
+          <!-- Service 3: Digital Local Footprint -->
+          <div class="service-card">
+            <div>
+              <div class="service-icon-box">🌐</div>
+              <div class="service-tag">Search &amp; Tech</div>
+              <h3 class="service-title">Website &amp; Local Footprint</h3>
+              <p class="service-desc">
+                When students search "best café near Presidency University," your café appears #1. We deploy lightning-fast digital menus and seamless table QR codes.
+              </p>
+            </div>
+            <ul class="service-feature-list">
+              <li><span class="dot"></span> Mobile-first digital menu website</li>
+              <li><span class="dot"></span> Google Business #1 Map SEO</li>
+              <li><span class="dot"></span> Branded table QR code workflows</li>
+              <li><span class="dot"></span> Review generation funnel</li>
+            </ul>
+          </div>
+
+          <!-- Service 4: Creator Collaborations -->
+          <div class="service-card">
+            <div>
+              <div class="service-icon-box">🤝</div>
+              <div class="service-tag">Influencer Circle</div>
+              <h3 class="service-title">Creator Collaborations</h3>
+              <p class="service-desc">
+                Curated tasting visits with Bengaluru's most trusted food curators and popular Presidency student tastemakers who provide genuine organic reach.
+              </p>
+            </div>
+            <ul class="service-feature-list">
+              <li><span class="dot"></span> Vetted Bengaluru foodie invites</li>
+              <li><span class="dot"></span> Menu tasting &amp; review days</li>
+              <li><span class="dot"></span> Student campus ambassador circle</li>
+              <li><span class="dot"></span> User-generated content loops</li>
+            </ul>
+          </div>
+
+          <!-- Service 5: Live Experiential Activations (Wide Card) -->
+          <div class="service-card span-two">
+            <div class="experiential-inner">
+              <div>
+                <div class="service-icon-box">🎸</div>
+                <div class="service-tag">Offline Footfall Engine</div>
+                <h3 class="service-title">Café Experiences &amp; Event Management</h3>
+                <p class="service-desc">
+                  This is our secret weapon. We don't just ask people to visit; we give them an unmissable reason to spend their evening at your tables with curated live sound, poetry open mics, and acoustic sunset sessions.
+                </p>
+                <ul class="service-feature-list">
+                  <li><span class="dot"></span> Acoustic music &amp; guitar jamming nights</li>
+                  <li><span class="dot"></span> Student open mic &amp; poetry slams</li>
+                  <li><span class="dot"></span> Turnkey audio equipment &amp; artist curation</li>
+                  <li><span class="dot"></span> Full event photo &amp; video documentation</li>
+                </ul>
+              </div>
+
+              <div class="experiential-perks-box">
+                <div class="perks-box-title">Why Events Work in Yelahanka:</div>
+                <div class="perks-tags-flex">
+                  <span class="perk-pill">Packed Slow Weeknights</span>
+                  <span class="perk-pill">High Beverage Order Value</span>
+                  <span class="perk-pill">Viral Organic Stories</span>
+                  <span class="perk-pill">Sticky Regular Retention</span>
+                  <span class="perk-pill">Zero Paid Ads Needed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERACTIVE RETAINER & PRICING CALCULATOR
+         ========================================================================== -->
+    <section class="section-spacing retainer-section" id="retainers">
+      <div class="container">
+        <div class="center-text">
+          <div class="section-eyebrow">Transparent Investment</div>
+          <h2 class="section-heading">Interactive Retainer Calculator</h2>
+          <p class="section-subheading">
+            Select a tailored growth tier, configure custom add-ons, and calculate your exact investment with one-click direct WhatsApp booking.
+          </p>
+        </div>
+
+        <div class="calculator-wrapper">
+          <!-- 3 Retainer Cards Grid -->
+          <div class="packages-selection-grid" role="radiogroup" aria-label="Retainer Packages">
+            <!-- Tier 1: Starter Vibe -->
+            <div class="package-card" id="pkg-starter" data-tier="starter" data-name="Starter Vibe" data-low="12000" data-high="15000" role="radio" aria-checked="false" tabindex="0">
+              <div class="package-header">
+                <div class="package-radio-indicator"></div>
+                <h3 class="package-tier-name">Starter Vibe</h3>
+                <p class="package-ideal-for">Perfect for newly opened cafés needing a strong foundational presence.</p>
+              </div>
+
+              <div class="package-price-range">
+                <div class="package-amount">₹12,000 – ₹15,000 <span class="period">/mo</span></div>
+              </div>
+
+              <ul class="package-deliverables">
+                <li>4 High-Definition 4K Reels / mo</li>
+                <li>12 Aesthetic Grid Posts &amp; Stories</li>
+                <li>Strategic Caption &amp; Hashtag Copy</li>
+                <li>Google Maps Profile Optimization</li>
+                <li>Monthly Growth &amp; Reach Analytics</li>
+              </ul>
+            </div>
+
+            <!-- Tier 2: Growth & Reach (Recommended) -->
+            <div class="package-card selected" id="pkg-growth" data-tier="growth" data-name="Growth &amp; Reach" data-low="20000" data-high="25000" role="radio" aria-checked="true" tabindex="0">
+              <div class="recommended-badge">★ Recommended Choice</div>
+              <div class="package-header">
+                <div class="package-radio-indicator"></div>
+                <h3 class="package-tier-name">Growth &amp; Reach</h3>
+                <p class="package-ideal-for">For established cafés looking to dominate student feeds and weekend walk-ins.</p>
+              </div>
+
+              <div class="package-price-range">
+                <div class="package-amount">₹20,000 – ₹25,000 <span class="period">/mo</span></div>
+              </div>
+
+              <ul class="package-deliverables">
+                <li>8 Cinematic 4K Reels &amp; Food Stills</li>
+                <li>20 Grid Posts + Daily Active Stories</li>
+                <li>1 Live Acoustic / Creator Event per month</li>
+                <li>Presidency Uni Creator Tasting Collabs</li>
+                <li>Google Local SEO &amp; Review Acceleration</li>
+                <li>Direct DM &amp; Lead Reservation Handling</li>
+              </ul>
+            </div>
+
+            <!-- Tier 3: Full Experiential -->
+            <div class="package-card" id="pkg-experiential" data-tier="experiential" data-name="Full Experiential" data-low="35000" data-high="40000" role="radio" aria-checked="false" tabindex="0">
+              <div class="package-header">
+                <div class="package-radio-indicator"></div>
+                <h3 class="package-tier-name">Full Experiential</h3>
+                <p class="package-ideal-for">Aggressive, full-throttle campus domination and multi-event programming.</p>
+              </div>
+
+              <div class="package-price-range">
+                <div class="package-amount">₹35,000 – ₹40,000 <span class="period">/mo</span></div>
+              </div>
+
+              <ul class="package-deliverables">
+                <li>16 Studio 4K Reels + Drone &amp; Macro</li>
+                <li>2 Signature Offline Events / Open Mics</li>
+                <li>Full Bengaluru Foodie Influencer Blitz</li>
+                <li>Priority 24/7 Community Manager</li>
+                <li>Google #1 Local Search Guarantee Program</li>
+                <li>Bi-weekly In-Person Strategy Sessions</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Addon Option Toggle Box -->
+          <div class="addon-toggle-card" id="addon-menu-toggle" role="checkbox" aria-checked="false" tabindex="0">
+            <div class="addon-info-left">
+              <div class="addon-icon-circle">📲</div>
+              <div class="addon-details">
+                <h4>Digital Menu Website &amp; Table QR Setup</h4>
+                <p>Custom ultra-fast branded web menu hosted on your domain with custom laser-engraved table acrylic QR stands.</p>
+              </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 20px;">
+              <div class="addon-price-tag">
+                +₹10,000
+                <span>One-Time Setup</span>
+              </div>
+              <div class="switch-ui" aria-hidden="true"></div>
+            </div>
+          </div>
+
+          <!-- Total Dynamic Estimator Bar -->
+          <div class="investment-summary-card">
+            <div class="summary-left">
+              <div class="summary-label">Estimated Agency Investment</div>
+              <div class="summary-price-display" id="calc-total-display">₹20,000 – ₹25,000 /mo</div>
+              <p class="summary-breakdown-text" id="calc-breakdown-text">
+                Selected: <strong>Growth &amp; Reach Tier</strong> (Standard monthly retainer). No one-time add-on included.
+              </p>
+            </div>
+
+            <div class="summary-actions">
+              <a href="#" class="btn-whatsapp" id="calc-whatsapp-btn" target="_blank" rel="noopener noreferrer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+                <span>Book Package on WhatsApp</span>
+              </a>
+              <button class="btn-secondary open-modal-btn">
+                <span>Request Custom Scope Proposal</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FOUNDING LEADERSHIP TEAM GRID
+         ========================================================================== -->
+    <section class="section-spacing leadership-section" id="leadership">
+      <div class="ambient-glow glow-sage" style="top: 30%; right: -150px;"></div>
+      <div class="container">
+        <div class="center-text">
+          <div class="equal-ownership-banner">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="2" x2="12" y2="22"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span>Equal Leadership Equity Model · 4 Founding Partners</span>
+          </div>
+          <h2 class="section-heading">The Founding Team</h2>
+          <p class="section-subheading">
+            Four specialized leaders with zero fluff. Every partner has skin in the game and directly owns delivery for your café.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <!-- Member 1: Manav -->
+          <div class="team-card">
+            <div class="team-avatar">
+              M
+              <span class="team-badge-equity">PARTNER</span>
+            </div>
+            <h3 class="team-name">Manav</h3>
+            <div class="team-role">Managing Partner &amp; Operations / Digital Lead</div>
+            <p class="team-bio">
+              Oversees agency strategy, resource allocation, high-performance website engineering, and Google Local SEO algorithms that secure #1 map placements.
+            </p>
+            <div class="team-specialties">
+              <span class="spec-tag">Agency Strategy</span>
+              <span class="spec-tag">Web Dev</span>
+              <span class="spec-tag">Local SEO</span>
+              <span class="spec-tag">Operations</span>
+            </div>
+          </div>
+
+          <!-- Member 2: Abdul -->
+          <div class="team-card">
+            <div class="team-avatar">
+              A
+              <span class="team-badge-equity">PARTNER</span>
+            </div>
+            <h3 class="team-name">Abdul</h3>
+            <div class="team-role">Creative Director &amp; Head of Production</div>
+            <p class="team-bio">
+              Directs all cinematic visuals. Master of 4K camera stabilization, macro beverage lighting, interior architectural framing, and punchy reel edits.
+            </p>
+            <div class="team-specialties">
+              <span class="spec-tag">Cinematography</span>
+              <span class="spec-tag">Food Photography</span>
+              <span class="spec-tag">Reel Color Grading</span>
+              <span class="spec-tag">Art Direction</span>
+            </div>
+          </div>
+
+          <!-- Member 3: Vinay -->
+          <div class="team-card">
+            <div class="team-avatar">
+              V
+              <span class="team-badge-equity">PARTNER</span>
+            </div>
+            <h3 class="team-name">Vinay</h3>
+            <div class="team-role">Client Partnerships &amp; Success Lead</div>
+            <p class="team-bio">
+              Ensures café owners experience seamless communication. Handles onboarding agreements, ROI reviews, revenue reporting, and event logistical coordination.
+            </p>
+            <div class="team-specialties">
+              <span class="spec-tag">Client Relations</span>
+              <span class="spec-tag">Contract Execution</span>
+              <span class="spec-tag">ROI Tracking</span>
+              <span class="spec-tag">Event Logistics</span>
+            </div>
+          </div>
+
+          <!-- Member 4: Dhanush -->
+          <div class="team-card">
+            <div class="team-avatar">
+              D
+              <span class="team-badge-equity">PARTNER</span>
+            </div>
+            <h3 class="team-name">Dhanush</h3>
+            <div class="team-role">Social Media &amp; Community Strategist</div>
+            <p class="team-bio">
+              The pulse of student culture. Identifies viral audio trends, crafts captivating youth copy, manages story engagement, and nurtures campus micro-ambassadors.
+            </p>
+            <div class="team-specialties">
+              <span class="spec-tag">Instagram Strategy</span>
+              <span class="spec-tag">Viral Copywriting</span>
+              <span class="spec-tag">Youth Culture</span>
+              <span class="spec-tag">Community DMs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT & DIRECT ONBOARDING SECTION
+         ========================================================================== -->
+    <section class="section-spacing contact-section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Left Column Contact Info -->
+          <div>
+            <div class="section-eyebrow">Partner with Us</div>
+            <h2 class="section-heading">Let's Craft Your <em>Café's Signature Vibe.</em></h2>
+            <p class="about-body-text">
+              We exclusively onboard 2 new partner cafés per month in the Yelahanka / Rajan Kunte belt to ensure uncompromising creative production and event excellence.
+            </p>
+
+            <div class="contact-info-card">
+              <ul class="info-list">
+                <li class="info-item">
+                  <div class="info-icon">📍</div>
+                  <div class="info-content">
+                    <h5>Strategic Focus Zone</h5>
+                    <p>Yelahanka, Rajan Kunte, Near Presidency University Campus, Bengaluru, Karnataka 560064</p>
+                  </div>
+                </li>
+                <li class="info-item">
+                  <div class="info-icon">💬</div>
+                  <div class="info-content">
+                    <h5>Direct WhatsApp Support</h5>
+                    <p>Instant responses within 2 hours: <a href="https://wa.me/919876543210" target="_blank" rel="noopener">+91 98765 43210</a></p>
+                  </div>
+                </li>
+                <li class="info-item">
+                  <div class="info-icon">🌐</div>
+                  <div class="info-content">
+                    <h5>Official Domain</h5>
+                    <p><a href="https://ppaperfortune.in">https://ppaperfortune.in</a></p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right Column Onboarding Form -->
+          <div class="onboarding-form-wrapper">
+            <h3 class="form-heading">Request Café Onboarding</h3>
+            <p class="form-subtext">Fill out your details below and your answers will instantly format into a WhatsApp briefing sent directly to our leadership team.</p>
+
+            <form id="direct-onboarding-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="form-cafe-name">Café Name <span class="req">*</span></label>
+                  <input type="text" id="form-cafe-name" class="form-control" placeholder="e.g. Blue Tokai / The Roast" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="form-owner-name">Owner / Manager Name <span class="req">*</span></label>
+                  <input type="text" id="form-owner-name" class="form-control" placeholder="Your Full Name" required />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="form-owner-phone">WhatsApp Number <span class="req">*</span></label>
+                  <input type="tel" id="form-owner-phone" class="form-control" placeholder="+91 98765 43210" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="form-location">Café Location Area</label>
+                  <select id="form-location" class="form-control">
+                    <option value="Near Presidency University">Near Presidency University</option>
+                    <option value="Yelahanka New Town">Yelahanka New Town</option>
+                    <option value="Rajan Kunte">Rajan Kunte</option>
+                    <option value="Sahakar Nagar / Hebbal">Sahakar Nagar / Hebbal</option>
+                    <option value="Other Bengaluru Location">Other Bengaluru Location</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="form-preferred-tier">Preferred Retainer Tier</label>
+                <select id="form-preferred-tier" class="form-control">
+                  <option value="Tier 2: Growth & Reach (₹20,000 – ₹25,000/mo) [RECOMMENDED]">Tier 2: Growth &amp; Reach (₹20,000 – ₹25,000/mo) [RECOMMENDED]</option>
+                  <option value="Tier 1: Starter Vibe (₹12,000 – ₹15,000/mo)">Tier 1: Starter Vibe (₹12,000 – ₹15,000/mo)</option>
+                  <option value="Tier 3: Full Experiential (₹35,000 – ₹40,000/mo)">Tier 3: Full Experiential (₹35,000 – ₹40,000/mo)</option>
+                  <option value="Custom Project Scope">Custom Project Scope</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="form-special-requests">Special Event or Production Goals</label>
+                <textarea id="form-special-requests" class="form-control" placeholder="Tell us about your seating capacity, food specialty, or if you want to host live acoustic nights..."></textarea>
+              </div>
+
+              <button type="submit" class="btn-whatsapp" style="width: 100%; justify-content: center; font-size: 1.02rem;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+                <span>Format &amp; Send to WhatsApp</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       ONBOARDING STRATEGY MODAL
+       ========================================================================== -->
+  <div class="modal-backdrop" id="strategy-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">✕</button>
+
+      <div class="section-eyebrow">Priority Strategy Session</div>
+      <h3 class="form-heading" id="modal-title">Book a Free Shoot &amp; Vibe Audit</h3>
+      <p class="form-subtext">Our Creative Director (Abdul) and Operations Lead (Manav) will visit your café in Yelahanka to sample your best brew and audit your content &amp; footfall potential.</p>
+
+      <form id="modal-audit-form">
+        <div class="form-group">
+          <label class="form-label" for="modal-cafe-name">Café Name <span class="req">*</span></label>
+          <input type="text" id="modal-cafe-name" class="form-control" placeholder="e.g. Brew &amp; Bakes" required />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="modal-contact-person">Contact Person <span class="req">*</span></label>
+            <input type="text" id="modal-contact-person" class="form-control" placeholder="Name" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="modal-phone">WhatsApp Number <span class="req">*</span></label>
+            <input type="tel" id="modal-phone" class="form-control" placeholder="+91 98765 43210" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="modal-convenient-day">Preferred Meeting Day &amp; Time</label>
+          <input type="text" id="modal-convenient-day" class="form-control" placeholder="e.g. Wednesday afternoon at the café" />
+        </div>
+
+        <button type="submit" class="btn-whatsapp" style="width: 100%; justify-content: center;">
+          <span>Submit via WhatsApp &amp; Confirm Slot</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <a href="https://ppaperfortune.in" class="brand-logo">
+            <div class="brand-mark" aria-hidden="true">PP</div>
+            <span>PPAPERFORTUNE</span>
+          </a>
+          <p>
+            Creative, Digital &amp; Experiential Growth Agency engineered specifically for Bengaluru's café scene. We turn good coffee into magnetic student communities.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links-list">
+            <li><a href="#about" class="footer-link">The Vibe Formula</a></li>
+            <li><a href="#services" class="footer-link">Core Disciplines</a></li>
+            <li><a href="#retainers" class="footer-link">Pricing Calculator</a></li>
+            <li><a href="#leadership" class="footer-link">Founding Team</a></li>
+            <li><a href="#contact" class="footer-link">Book Shoot Strategy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Focus Region</div>
+          <ul class="footer-links-list">
+            <li><span class="footer-link">Presidency University</span></li>
+            <li><span class="footer-link">Yelahanka New Town</span></li>
+            <li><span class="footer-link">Rajan Kunte Belt</span></li>
+            <li><span class="footer-link">Hebbal &amp; Sahakar Nagar</span></li>
+            <li><span class="footer-link">North Bengaluru</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Direct Connect</div>
+          <ul class="footer-links-list">
+            <li><a href="https://ppaperfortune.in" class="footer-link">ppaperfortune.in</a></li>
+            <li><a href="https://wa.me/919876543210" class="footer-link">WhatsApp: +91 98765 43210</a></li>
+            <li><span class="footer-link">Mon–Sat: 9:00 AM – 8:00 PM</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2025 PPAPERFORTUNE. All rights reserved. Registered Creative Agency in Bengaluru, India.
+        </div>
+        <div>
+          Official Domain: <a href="https://ppaperfortune.in">https://ppaperfortune.in</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       VANILLA JAVASCRIPT APPLICATION LOGIC
+       ========================================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      'use strict';
+
+      // WhatsApp Agency Phone (Team contact)
+      const AGENCY_WHATSAPP_NUMBER = '919876543210';
+
+      // 1. Scroll Progress Bar & Sticky Header Styling
+      const progressBar = document.getElementById('scroll-progress');
+      const siteHeader = document.getElementById('site-header');
+      const backToTopBtn = document.getElementById('back-to-top');
+
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const progress = (scrollTop / scrollHeight) * 100;
+
+        if (progressBar) {
+          progressBar.style.width = progress + '%';
+        }
+
+        if (siteHeader) {
+          if (scrollTop > 40) {
+            siteHeader.classList.add('scrolled');
+          } else {
+            siteHeader.classList.remove('scrolled');
+          }
+        }
+
+        if (backToTopBtn) {
+          if (scrollTop > 500) {
+            backToTopBtn.classList.add('visible');
+          } else {
+            backToTopBtn.classList.remove('visible');
+          }
+        }
+      });
+
+      if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // 2. Mobile Drawer Navigation Toggle
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      const drawerOverlay = document.getElementById('drawer-overlay');
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+      function openDrawer() {
+        if (!mobileDrawer) return;
+        mobileDrawer.classList.add('open');
+        drawerOverlay.classList.add('open');
+        menuToggle.classList.add('active');
+        menuToggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeDrawer() {
+        if (!mobileDrawer) return;
+        mobileDrawer.classList.remove('open');
+        drawerOverlay.classList.remove('open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+          const isOpen = mobileDrawer.classList.contains('open');
+          if (isOpen) {
+            closeDrawer();
+          } else {
+            openDrawer();
+          }
+        });
+      }
+
+      if (drawerOverlay) {
+        drawerOverlay.addEventListener('click', closeDrawer);
+      }
+
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', closeDrawer);
+      });
+
+      // 3. Interactive Pricing & Retainer Calculator
+      const packageCards = document.querySelectorAll('.package-card');
+      const addonToggle = document.getElementById('addon-menu-toggle');
+      const calcTotalDisplay = document.getElementById('calc-total-display');
+      const calcBreakdownText = document.getElementById('calc-breakdown-text');
+      const calcWhatsappBtn = document.getElementById('calc-whatsapp-btn');
+      const preferredTierSelect = document.getElementById('form-preferred-tier');
+
+      let currentPackage = {
+        tier: 'growth',
+        name: 'Growth & Reach',
+        low: 20000,
+        high: 25000
+      };
+      let isAddonActive = false;
+
+      function updateCalculator() {
+        const addonCost = isAddonActive ? 10000 : 0;
+        const finalLow = currentPackage.low + addonCost;
+        const finalHigh = currentPackage.high + addonCost;
+
+        const formattedLow = '₹' + finalLow.toLocaleString('en-IN');
+        const formattedHigh = '₹' + finalHigh.toLocaleString('en-IN');
+
+        if (isAddonActive) {
+          calcTotalDisplay.innerHTML = `${formattedLow} – ${formattedHigh} <span style="font-size: 1.1rem; color: var(--sage); font-weight: normal;">(incl. +₹10,000 QR Menu)</span>`;
+          calcBreakdownText.innerHTML = `Selected: <strong>${currentPackage.name} Tier</strong> with Digital Menu Website &amp; Table QR setup included.`;
+        } else {
+          calcTotalDisplay.innerHTML = `${formattedLow} – ${formattedHigh} <span style="font-size: 1.1rem; color: var(--sage); font-weight: normal;">/mo</span>`;
+          calcBreakdownText.innerHTML = `Selected: <strong>${currentPackage.name} Tier</strong> (Standard monthly retainer). No one-time add-on included.`;
+        }
+
+        // Generate Pre-filled WhatsApp Link
+        const messageText = `Hi PPAPERFORTUNE Team! 👋\n\n` +
+          `I am interested in onboarding my café in Bengaluru.\n\n` +
+          `*Package Selected:* ${currentPackage.name}\n` +
+          `*Monthly Retainer Estimate:* ${formattedLow} – ${formattedHigh}\n` +
+          `*Digital Menu & QR Setup:* ${isAddonActive ? 'Yes (+₹10,000 one-time)' : 'No'}\n\n` +
+          `Please share your availability for a strategy meeting!\n` +
+          `Source: https://ppaperfortune.in`;
+
+        calcWhatsappBtn.href = `https://wa.me/${AGENCY_WHATSAPP_NUMBER}?text=${encodeURIComponent(messageText)}`;
+      }
+
+      packageCards.forEach(card => {
+        card.addEventListener('click', () => {
+          packageCards.forEach(c => {
+            c.classList.remove('selected');
+            c.setAttribute('aria-checked', 'false');
+          });
+          card.classList.add('selected');
+          card.setAttribute('aria-checked', 'true');
+
+          currentPackage = {
+            tier: card.dataset.tier,
+            name: card.dataset.name,
+            low: parseInt(card.dataset.low, 10),
+            high: parseInt(card.dataset.high, 10)
+          };
+
+          // Synchronize with form dropdown if found
+          if (preferredTierSelect) {
+            for (let i = 0; i < preferredTierSelect.options.length; i++) {
+              if (preferredTierSelect.options[i].value.toLowerCase().includes(currentPackage.tier)) {
+                preferredTierSelect.selectedIndex = i;
+                break;
+              }
+            }
+          }
+
+          updateCalculator();
+        });
+
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            card.click();
+          }
+        });
+      });
+
+      if (addonToggle) {
+        addonToggle.addEventListener('click', () => {
+          isAddonActive = !isAddonActive;
+          addonToggle.classList.toggle('active', isAddonActive);
+          addonToggle.setAttribute('aria-checked', isAddonActive ? 'true' : 'false');
+          updateCalculator();
+        });
+
+        addonToggle.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            addonToggle.click();
+          }
+        });
+      }
+
+      // Initial Calculator Calculation
+      updateCalculator();
+
+      // 4. Toast Notification Helper
+      const toast = document.getElementById('toast-notification');
+      const toastMsg = document.getElementById('toast-message');
+      const toastIcon = document.getElementById('toast-icon');
+      let toastTimeout = null;
+
+      function showToast(message, icon = '✨') {
+        if (!toast) return;
+        toastMsg.textContent = message;
+        toastIcon.textContent = icon;
+        toast.classList.add('show');
+
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+          toast.classList.remove('show');
+        }, 3800);
+      }
+
+      // 5. Strategy Modal Logic
+      const modal = document.getElementById('strategy-modal');
+      const openModalButtons = document.querySelectorAll('.open-modal-btn');
+      const modalCloseBtn = document.getElementById('modal-close-btn');
+
+      function openStrategyModal() {
+        if (!modal) return;
+        closeDrawer();
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        const firstInput = modal.querySelector('input');
+        if (firstInput) firstInput.focus();
+      }
+
+      function closeStrategyModal() {
+        if (!modal) return;
+        modal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      openModalButtons.forEach(btn => {
+        btn.addEventListener('click', openStrategyModal);
+      });
+
+      if (modalCloseBtn) {
+        modalCloseBtn.addEventListener('click', closeStrategyModal);
+      }
+
+      if (modal) {
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            closeStrategyModal();
+          }
+        });
+      }
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal && modal.classList.contains('open')) {
+          closeStrategyModal();
+        }
+      });
+
+      // 6. Direct Onboarding Form Submission -> WhatsApp
+      const directForm = document.getElementById('direct-onboarding-form');
+      if (directForm) {
+        directForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const cafeName = document.getElementById('form-cafe-name').value.trim();
+          const ownerName = document.getElementById('form-owner-name').value.trim();
+          const phone = document.getElementById('form-owner-phone').value.trim();
+          const location = document.getElementById('form-location').value;
+          const tier = document.getElementById('form-preferred-tier').value;
+          const notes = document.getElementById('form-special-requests').value.trim();
+
+          if (!cafeName || !ownerName || !phone) {
+            showToast('Please fill in all required fields.', '⚠️');
+            return;
+          }
+
+          const formattedMessage =
+            `🎉 *New Café Onboarding Request — PPAPERFORTUNE*\n\n` +
+            `*Café Name:* ${cafeName}\n` +
+            `*Owner/Lead:* ${ownerName}\n` +
+            `*Phone:* ${phone}\n` +
+            `*Location:* ${location}\n` +
+            `*Preferred Tier:* ${tier}\n` +
+            (notes ? `*Special Goals:* ${notes}\n\n` : `\n`) +
+            `Sent from https://ppaperfortune.in`;
+
+          const waUrl = `https://wa.me/${AGENCY_WHATSAPP_NUMBER}?text=${encodeURIComponent(formattedMessage)}`;
+          showToast('Opening WhatsApp with your formatted brief...', '🚀');
+          window.open(waUrl, '_blank', 'noopener,noreferrer');
+        });
+      }
+
+      // 7. Modal Audit Form Submission -> WhatsApp
+      const modalForm = document.getElementById('modal-audit-form');
+      if (modalForm) {
+        modalForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+
+          const cafeName = document.getElementById('modal-cafe-name').value.trim();
+          const person = document.getElementById('modal-contact-person').value.trim();
+          const phone = document.getElementById('modal-phone').value.trim();
+          const preferredDay = document.getElementById('modal-convenient-day').value.trim();
+
+          if (!cafeName || !person || !phone) {
+            showToast('Please fill in required fields.', '⚠️');
+            return;
+          }
+
+          const formattedMessage =
+            `☕ *Free Café Shoot & Vibe Audit Request*\n\n` +
+            `*Café Name:* ${cafeName}\n` +
+            `*Contact:* ${person}\n` +
+            `*Phone:* ${phone}\n` +
+            (preferredDay ? `*Preferred Time:* ${preferredDay}\n\n` : `\n`) +
+            `Can't wait to connect with Abdul & Manav!\n` +
+            `https://ppaperfortune.in`;
+
+          const waUrl = `https://wa.me/${AGENCY_WHATSAPP_NUMBER}?text=${encodeURIComponent(formattedMessage)}`;
+          closeStrategyModal();
+          showToast('Slot request formatted! Opening WhatsApp...', '📅');
+          window.open(waUrl, '_blank', 'noopener,noreferrer');
+        });
+      }
+
+      // 8. Active Nav Link Highlighting on Scroll
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.desktop-nav .nav-link');
+
+      window.addEventListener('scroll', () => {
+        let currentSectionId = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 120;
+          const sectionHeight = section.clientHeight;
+          if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+            currentSectionId = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + currentSectionId) {
+            link.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
